@@ -5,7 +5,6 @@
  */
 package com.huylvq.splitfile;
 
-import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.TimeUnit;
