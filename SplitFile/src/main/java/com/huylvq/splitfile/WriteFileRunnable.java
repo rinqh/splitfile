@@ -15,15 +15,15 @@ import java.util.logging.Logger;
  *
  * @author Rin
  */
-public class WriteFile implements Runnable {
+public class WriteFileRunnable implements Runnable {
 
     private String name;
     private MyQueue queue;
 
-    public WriteFile() {
+    public WriteFileRunnable() {
     }
 
-    public WriteFile(String name, MyQueue queue) {
+    public WriteFileRunnable(String name, MyQueue queue) {
         this.name = name;
         this.queue = queue;
     }
@@ -44,7 +44,7 @@ public class WriteFile implements Runnable {
                 }
             }
         } catch (InterruptedException ex) {
-            Logger.getLogger(WriteFile.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
+            Logger.getLogger(WriteFileRunnable.class.getName()).log(Level.SEVERE, ex.getMessage(), ex);
         }
 
     }
@@ -59,14 +59,14 @@ public class WriteFile implements Runnable {
                 writer.newLine();
             }
         } catch (IOException ex) {
-            Logger.getLogger(WriteFile.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(WriteFileRunnable.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
                 if (writer != null) {
                     writer.close();
                 }
             } catch (IOException ex) {
-                Logger.getLogger(WriteFile.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(WriteFileRunnable.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
 //        System.out.println(System.currentTimeMillis() + this.name + " done!!");

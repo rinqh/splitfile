@@ -30,8 +30,8 @@ public class Main {
             int maxSize = 100 * 1024 * 1024;
             String input = "input.txt";
             Future producerStatus = threadPool.submit(new ReadFileRunnable(queue, input, files, maxSize));
-            Future consumer1Status = threadPool.submit(new WriteFile("Write 1", queue));
-            Future consumer2Status = threadPool.submit(new WriteFile("Write 2", queue));
+            Future consumer1Status = threadPool.submit(new WriteFileRunnable("Write 1", queue));
+            Future consumer2Status = threadPool.submit(new WriteFileRunnable("Write 2", queue));
             futures.add(producerStatus);
             futures.add(consumer1Status);
             futures.add(consumer2Status);
